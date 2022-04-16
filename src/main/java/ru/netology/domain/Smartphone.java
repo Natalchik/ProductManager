@@ -9,5 +9,12 @@ public class Smartphone extends Product {
         super(id, name, price);
         this.manufacturer = manufacturer;
     }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "manufacturer='" + manufacturer + '\'' +
+                '}';
+    }
 }
 

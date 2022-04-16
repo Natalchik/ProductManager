@@ -20,12 +20,10 @@ public class ProductManager {
         Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
-                int length = result.length + 1;
-                Product[] products = new Product[length];
-                System.arraycopy(products, 0, products, 0, result.length);
-                int lastIndex = products.length - 1;
-                products[lastIndex] = product;
-                result=products;
+                Product[] tmp = new Product[result.length + 1];
+                System.arraycopy(result, 0, tmp, 0, result.length);
+                tmp[tmp.length - 1] = product;
+                result = tmp;
             }
         }
         return result;
@@ -36,3 +34,5 @@ public class ProductManager {
         return product.getName().contains(search);
     }
 }
+
+

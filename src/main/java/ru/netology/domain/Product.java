@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Product {
     public int length;
-    private int id;
+    public int id;
     private String name;
     private int price;
 
